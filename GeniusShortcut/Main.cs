@@ -27,7 +27,7 @@ namespace GeniusShortcut
         public const int VK_VOLUME_UP = 0xAF;
         public const int VK_VOLUME_DOWN = 0xAE;
 
-        private const string LAST_UPDATE_DATE = "May 1st 2020";
+        private const string LAST_UPDATE_DATE = "May 2nd 2020";
         private const string GENIUS_API_TOKEN = "yEwvFUOvsOYufC9VftbnPl6B4dvJWXV0sVKQ661SCl4DgMJcn2gk750RJd-3leqB";
 
         public GlobalHotkey ghk;
@@ -41,6 +41,7 @@ namespace GeniusShortcut
         private string unformattedSong;
         private string unformattedArtist;
         private string geniusSearchTerm;
+        private bool exitClickedFromTray;
         private bool changeKeyDialogOpen = false;
         private bool hasModifier = false;
         private bool currentlyFetchingSong = false;
@@ -110,7 +111,7 @@ namespace GeniusShortcut
 
         private void Dialog_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (minimizeToTray.Checked)
+            if (minimizeToTray.Checked && !exitClickedFromTray)
             {
                 e.Cancel = true;
                 Hide();
@@ -1112,18 +1113,22 @@ namespace GeniusShortcut
             }
             else
             {
-                notifyIcon.ContextMenuStrip.Show(Cursor.Position.X, Cursor.Position.Y);
+                notifyIcon.ContextMenuStrip.Show(Cursor.Position.X, Cursor.Position.Y - 70);
             }
         }
 
         private void TrayMenuContext()
         {
             notifyIcon.ContextMenuStrip = new ContextMenuStrip();
+            //notifyIcon.ContextMenuStrip.Items.Add("Find Song", null, HandleHotkey);
+            notifyIcon.ContextMenuStrip.Items.Add("Change Hotkey", null, HotKeyBtn_Click);
+            notifyIcon.ContextMenuStrip.Items.Add("About", null, aboutBtn_Click);
             notifyIcon.ContextMenuStrip.Items.Add("Exit", null, MenuExit_Click);
         }
 
         void MenuExit_Click(object sender, EventArgs e)
         {
+            exitClickedFromTray = true;
             Application.Exit();
         }
     }
