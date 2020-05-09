@@ -735,7 +735,8 @@ namespace GeniusShortcut
                                 else
                                 {
                                     //maybe swap with geniusSearchTerm = songSplit[0] + " - " + songSplit[1] + " " + unformattedArtist; ?
-                                    geniusSearchTerm = songSplit[0] + " " + unformattedArtist;
+                                    //geniusSearchTerm = songSplit[0] + " " + unformattedArtist;
+                                    geniusSearchTerm = songSplit[0] + " " + songSplit[1];
                                 }
                             }
 
