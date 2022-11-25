@@ -8,3 +8,5 @@ Detects currently playing song and opens lyrics in a new tab. Hotkey customizabl
 
 Simply activate the hotkey or click the 'Find Song' button. The app will attempt to read song information from the system and will use this information
 to look up lyrics on genius. If lyrics are found, the lyrics page will be opened in a new tab in the default browser.
+
+Uses the Genius API: https://docs.genius.com/
