@@ -2,7 +2,7 @@
 
 Instantly get the lyrics for whatever song you're listening to with the push of a button.
 
-Detects currently playing song and opens lyrics in a new tab.
+Detects currently playing song from any source and opens lyrics in a new tab.
  
 ![Capture](https://user-images.githubusercontent.com/60619443/204061200-161fd3cd-ebf2-4331-bb45-396372b62cc4.PNG)
 
