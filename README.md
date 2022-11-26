@@ -15,4 +15,5 @@ Features:
 - Song detection from ANY source on the system
 - Customizable hotkey
 - Minimization to system tray
+- Automatic startup with Windows
 - Utilization of the Genius API (https://docs.genius.com/)
